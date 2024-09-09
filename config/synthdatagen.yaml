@@ -1,0 +1,18 @@
+service_model_name: gpt-4o-2024-05-13
+rate_limit_per_minute: 60
+prompt_tmpl_path: config/prompts.toml
+
+reference_ds_id: Data/GPT3.5_casted
+reference_ds_split: test
+num_samples: 20
+seed: 2024
+
+
+
+gen_workers: 10
+
+push_synth_ds_to_hf_hub: false
+synth_ds_id: Data/New_Data
+synth_ds_split: test
+synth_ds_append: true
+

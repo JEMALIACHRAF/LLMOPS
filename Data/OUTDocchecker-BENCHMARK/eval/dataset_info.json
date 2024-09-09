@@ -1,0 +1,85 @@
+{
+  "citation": "",
+  "description": "",
+  "features": {
+    "prompt": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "response": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "model_name": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "eval_prompts": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "relevance_scores": {
+      "dtype": "float64",
+      "_type": "Value"
+    },
+    "completeness_scores": {
+      "dtype": "float64",
+      "_type": "Value"
+    },
+    "grammar_and_style_scores": {
+      "dtype": "float64",
+      "_type": "Value"
+    },
+    "technical_accuracy_scores": {
+      "dtype": "float64",
+      "_type": "Value"
+    },
+    "openxml_structure_scores": {
+      "dtype": "float64",
+      "_type": "Value"
+    },
+    "reasons": {
+      "completeness": {
+        "feature": {
+          "dtype": "string",
+          "_type": "Value"
+        },
+        "_type": "Sequence"
+      },
+      "grammar_and_style": {
+        "feature": {
+          "dtype": "string",
+          "_type": "Value"
+        },
+        "_type": "Sequence"
+      },
+      "openxml_structure": {
+        "feature": {
+          "dtype": "string",
+          "_type": "Value"
+        },
+        "_type": "Sequence"
+      },
+      "relevance": {
+        "feature": {
+          "dtype": "string",
+          "_type": "Value"
+        },
+        "_type": "Sequence"
+      },
+      "technical_accuracy": {
+        "feature": {
+          "dtype": "string",
+          "_type": "Value"
+        },
+        "_type": "Sequence"
+      }
+    },
+    "evaluators": {
+      "dtype": "string",
+      "_type": "Value"
+    }
+  },
+  "homepage": "",
+  "license": ""
+}

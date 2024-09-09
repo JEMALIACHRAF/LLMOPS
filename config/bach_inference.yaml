@@ -1,0 +1,21 @@
+ft_model_id: Qwen/Qwen1.5-0.5B
+ft_model_revision: main
+ft_model_config_path: config/sample_config.yaml
+load_in_8bit: false
+load_in_4bit: true
+test_ds_id: Data/eval_dataset2
+push_lm_responses_to_hf_hub: false
+test_ds_split: test
+batch_infer_data_preprocess_bs: 1
+inference_bs: 1
+repeat: 1
+lm_response_ds_id: Data/Inference1
+lm_response_ds_split: batch_infer
+lm-response-append: true
+
+# Elasticsearch connection details
+elasticsearch:
+  es_url: "http://10.0.4.125:9200"
+  username: "ml_user"
+  password: "MLnoor@996"
+  index_name: "lm_responses"
