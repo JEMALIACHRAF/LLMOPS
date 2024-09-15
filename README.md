@@ -9,9 +9,11 @@ LLMOPS is a pipeline designed to handle various stages of large language model (
 * `Evaluation`: Measure model performance on predefined criteria.
   
 The architecture of this project is represented in the following images:
+
+![LLMOPS Architecture](Data/LLMOPs_workflow.jpeg) ![LLMOPS Architecture](Data/LLMOPS_pipeline.jpeg)
+
 ## Installation Requirements
 To set up and run this project, the following Python packages are required:
-
 ```
 python3.12 -m pip install openai==0.28
  python3.12 -m pip install git+https://github.com/huggingface/alignment-handbook.git@main
@@ -71,6 +73,11 @@ pip install accelerate
 To launch the training using `accelerate`, run the following command:
 ```
 accelerate launch --config_file recipes/accelerate_configs/multi_gpu.yaml --num_processes=1 scripts/run_sft.py recipes/custom/config.yaml
+
+```
+### Monitoring and Logging
+All model training, evaluation, and inference operations are monitored and logged using ``Langfuse``. Langfuse provides real-time insights into the performance of your models.
+
 
 ```
 ### Monitoring and Logging
