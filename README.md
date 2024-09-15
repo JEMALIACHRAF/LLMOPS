@@ -9,10 +9,11 @@ LLMOPS is a pipeline designed to handle various stages of large language model (
 * `Evaluation`: Measure model performance on predefined criteria.
   
 The architecture of this project is represented in the following images:
+
+![LLMOPS Architecture](Data/LLMOPs_workflow.jpeg) ![LLMOPS Architecture](Data/LLMOPS_pipeline.jpeg)
+
 ## Installation Requirements
 To set up and run this project, the following Python packages are required:
-![LLMOPS Architecture](Data/LLMOPs workflow.jpeg)
-
 ```
 python3.12 -m pip install openai==0.28
  python3.12 -m pip install git+https://github.com/huggingface/alignment-handbook.git@main
