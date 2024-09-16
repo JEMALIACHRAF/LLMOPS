@@ -15,7 +15,7 @@ lm-response-append: true
 
 # Elasticsearch connection details
 elasticsearch:
-  es_url: "http://10.0.4.125:9200"
-  username: "ml_user"
-  password: "MLnoor@996"
-  index_name: "lm_responses"
+  es_url: "http:"
+  username: "*****"
+  password: "******"
+  index_name: "***********"
