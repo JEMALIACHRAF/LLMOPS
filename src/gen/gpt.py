@@ -8,7 +8,7 @@ import os
 
 
 
-OPENAI_API_KEY = "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"
+OPENAI_API_KEY = "***********************"
 model_name = "gpt-4o-2024-05-13"  # Ensure this is the correct model name for chat
 
 
