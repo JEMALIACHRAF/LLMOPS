@@ -13,15 +13,15 @@ push_eval_to_hf_hub: false
 eval_ds_id: /home/devadmin/LLMOPS/Data/OUTDocchecker-BENCHMARK
 eval_ds_split: eval
 
-langfuse_public_key: "pk-lf-527a55bb-d267-47d2-98bb-2ebb7bc3d18a"
-langfuse_secret_key: "sk-lf-cf8e0f6e-d4ca-42bc-9b27-a1e38d62c2b7"
-langfuse_host: "http://10.0.4.138:3111"
+langfuse_public_key: "******************"
+langfuse_secret_key: "*******************"
+langfuse_host: "**************"
 
 session_id: "DocChecker3"
 prompt_langfuse: true
 
 # Elasticsearch settings
 push_to_elasticsearch: false  # Set to false if you don't want to push to Elasticsearch
-es_url: "http://10.0.4.125:9200"
-es_username: 'ml_user'
-es_password: 'MLnoor@996'
+es_url: "http://"
+es_username: '******'
+es_password: '***********'
