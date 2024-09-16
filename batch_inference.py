@@ -55,7 +55,7 @@ def batch_inference(args):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="CLI for batch inference step")
 
-    parser.add_argument("--openai-api-key", type=str, default="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",
+    parser.add_argument("--openai-api-key", type=str, default="***************************",
                         help="OpenAi API key for authentication.")
     parser.add_argument("--service-model-name", type=str, default="gpt-3.5-turbo",
                         help="Which service LLM to use for evaluation of the local fine-tuned model")
