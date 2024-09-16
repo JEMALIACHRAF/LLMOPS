@@ -132,7 +132,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="CLI for batch inference step")
 
     # OpenAI API Key
-    parser.add_argument("--openai-api-key", type=str, default="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",
+    parser.add_argument("--openai-api-key", type=str, default="****************************",
                         help="OpenAI API key for authentication.")
     # Path to the configuration file
     parser.add_argument("--from-config", type=str, default="config/evaluation.yaml",
