@@ -205,6 +205,47 @@ La couche d'inférence dans le framework LLMOPS est conçue pour être à la foi
   - `batch_infer_data_preprocess_bs` : Taille des lots pour le prétraitement des données lors de l'inférence.
   - `inference_bs` : Taille des lots pour l'exécution des inférences.
 
+#### Fonctionnalité d'Inférence dans LLMOps
+
+#### 1. Personnalisation du Modèle
+Configurez votre modèle en fonction de vos besoins spécifiques.
+
+##### Paramètres Clés
+- `model_id` : Identifiant unique du modèle.
+- `model_revision` : Révision spécifique du modèle.
+- `model_config_path` : Chemin d'accès au fichier de configuration du modèle.
+
+#### 2. Optimisation de la Performance
+Améliorez les performances de chargement et d'inférence du modèle.
+
+##### Paramètres Clés
+- `load_in_8bit` : Charge le modèle en utilisant une précision de 8 bits.
+- `load_in_4bit` : Charge le modèle en utilisant une précision de 4 bits.
+
+#### 3. Gestion des Données de Test
+Organisez et gérez vos jeux de données pour des tests efficaces.
+
+##### Paramètres Clés
+- `test_ds_id` : Identifiant du jeu de données de test.
+- `test_ds_split` : Fraction du jeu de données de test à utiliser.
+
+#### 4. Prétraitement et Inférence par Lots
+Optimisez le prétraitement des données et les inférences en lots.
+
+##### Paramètres Clés
+- `batch_infer_data_preprocess_bs` : Taille de batch pour le prétraitement des données d'inférence.
+- `inference_bs` : Taille de batch pour l'inférence.
+
+#### 5. Enregistrement et Gestion des Réponses du Modèle
+Gérez et enregistrez les réponses générées par le modèle.
+
+##### Paramètres Clés
+- `lm_response_ds_id` : Identifiant du jeu de données de réponses du modèle.
+- `lm_response_ds_split` : Fraction du jeu de données pour les réponses du modèle.
+- `lm-response-append` : Mode d'ajout des réponses.
+- `push_lm_responses_to_langfuse` : Envoi des réponses générées vers Langfuse pour suivi.
+
+
 ### Couche d'Évaluation
 
 La couche d'évaluation dans le framework LLMOPS est conçue pour offrir un système robuste et flexible pour évaluer les performances des LLMs.
@@ -218,6 +259,49 @@ La couche d'évaluation dans le framework LLMOPS est conçue pour offrir un syst
   - `log_to_langfuse` : Consigne les résultats d'évaluation dans Langfuse.
 
 - **Entrées Nécessaires** : Les utilisateurs doivent fournir les identifiants des ensembles de données et d'autres détails de configuration via un fichier YAML.
+
+#### Fonctionnalité d'Evaluation dans LLMOps
+
+#### 1. Sélection et Utilisation du Modèle de Service
+Choisissez et configurez le modèle de service pour les évaluations avec des limitations de taux.
+
+##### Paramètres Clés
+- `service_model_name` : Nom du modèle de service utilisé pour l'évaluation.
+- `rate_limit_per_minute` : Limite de requêtes par minute pour le modèle de service.
+
+#### 2. Personnalisation des Prompts d'Évaluation
+Configurez le modèle de prompts d'évaluation en fonction de vos besoins.
+
+##### Paramètres Clés
+- `prompt_tmpl_path` : Chemin d'accès au fichier de template de prompts.
+
+#### 3. Gestion des Données de Réponses et d'Évaluation
+Organisez et suivez les jeux de données de réponses et d'évaluation pour une analyse efficace.
+
+##### Paramètres Clés
+- `lm_response_ds_id` : Identifiant du jeu de données de réponses du modèle.
+- `lm_response_ds_split` : Fraction du jeu de données pour les réponses.
+- `eval_ds_id` : Identifiant du jeu de données d'évaluation.
+- `eval_ds_split` : Fraction du jeu de données pour l'évaluation.
+
+#### 4. Optimisation des Ressources pour l'Évaluation
+Améliorez les performances d'évaluation en optimisant les ressources.
+
+##### Paramètres Clés
+- `eval_data_preprocess_bs` : Taille de batch pour le prétraitement des données d'évaluation.
+- `eval_repeat` : Nombre de répétitions pour chaque évaluation.
+- `eval_workers` : Nombre de travailleurs parallèles pour l'évaluation.
+
+#### 5. Intégration avec Langfuse pour le Monitoring
+Connectez-vous à Langfuse pour le suivi des performances d'évaluation.
+
+##### Paramètres Clés
+- `langfuse_public_key` : Clé publique pour l'authentification avec Langfuse.
+- `langfuse_secret_key` : Clé secrète pour l'authentification avec Langfuse.
+- `langfuse_host` : Hôte de Langfuse.
+- `session_id` : Identifiant de la session pour le suivi.
+- `prompt_langfuse` : Indicateur pour envoyer les prompts à Langfuse.
+
 
 ### Couche de Fine-Tuning
 
@@ -237,6 +321,62 @@ Le fine-tuning dans LLMOPS est conçu pour adapter les modèles LLMs aux cas d'u
 
 - **Low-Rank Adaptation (LoRA)** : Permet un fine-tuning efficace sans nécessiter la réinitialisation complète du modèle.
 - **Support Multi-GPU avec Accelerate** : Optimise l'utilisation des ressources matérielles.
+
+#### Fonctionnalité de Fine-tuning dans LLMOps
+
+#### 1. Fonctionnalité de Fine-tuning dans LLMOps
+Ajustez et améliorez les modèles en fonction de jeux de données spécifiques pour des performances accrues.
+
+#### 2. Configuration du Modèle
+Configurez le modèle de base pour le fine-tuning.
+
+##### Paramètres Clés
+- `model_name_or_path` : Chemin ou nom du modèle à fine-tuner.
+- `model_revision` : Révision du modèle à utiliser.
+- `torch_dtype` : Type de données PyTorch pour les poids du modèle (ex. : `float32`, `bf16`).
+
+#### 3. Optimisation avec LoRA (Low-Rank Adaptation)
+Améliorez l'efficacité du fine-tuning en utilisant LoRA pour des modèles plus légers.
+
+##### Paramètres Clés
+- `load_in_4bit` : Charge le modèle en utilisant une précision de 4 bits.
+- `use_peft` : Active l'utilisation de PEFT (Parameter-Efficient Fine-Tuning).
+- `lora_r` : Paramètre de rang pour LoRA.
+- `lora_alpha` : Hyperparamètre alpha pour LoRA.
+- `lora_dropout` : Taux de dropout pour LoRA.
+- `lora_target_modules` : Modules cibles pour appliquer LoRA.
+
+#### 4. Préparation et Mixage des Données
+Configurez et mélangez les jeux de données pour l'entraînement.
+
+##### Paramètres Clés
+- `chat_template` : Modèle de chat à utiliser pour le format des données.
+- `dataset_mixer` : Méthode pour mélanger différents jeux de données.
+- `dataset_splits` : Fractionnement des jeux de données.
+- `preprocessing_num_workers` : Nombre de travailleurs pour le prétraitement des données.
+
+#### 5. Configuration de l'Entraîneur (SFT Trainer)
+Ajustez les paramètres de l'entraîneur pour le fine-tuning du modèle.
+
+##### Paramètres Clés
+- `bf16` : Utilise le format `bfloat16` pour l'entraînement.
+- `do_eval` : Effectue une évaluation pendant l'entraînement.
+- `evaluation_strategy` : Stratégie d'évaluation (par ex., `steps` ou `epoch`).
+- `gradient_accumulation_steps` : Nombre de pas d'accumulation de gradient.
+- `gradient_checkpointing` : Active le gradient checkpointing pour économiser la mémoire.
+- `learning_rate` : Taux d'apprentissage pour le fine-tuning.
+
+## 6. Gestion des Sorties et du Logging
+Configurez la gestion des sorties et le suivi des logs pendant l'entraînement.
+
+### Paramètres Clés
+- `hub_model_id` : Identifiant pour publier le modèle sur le hub.
+- `output_dir` : Répertoire pour sauvegarder les sorties.
+- `logging_strategy` : Stratégie de logging (par ex., `steps` ou `epoch`).
+- `report_to` : Destination pour les rapports de suivi (ex., `tensorboard`, `wandb`).
+- `save_strategy` : Stratégie de sauvegarde (par ex., `steps` ou `epoch`).
+
+
 
 ### Couche de Monitoring et Logging
 
